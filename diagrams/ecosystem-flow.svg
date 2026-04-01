@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600" font-family="Inter, system-ui, sans-serif">
+  <defs>
+    <linearGradient id="purpleGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#7C3AED"/>
+      <stop offset="100%" style="stop-color:#472DF9"/>
+    </linearGradient>
+    <linearGradient id="orangeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#F59E0B"/>
+      <stop offset="100%" style="stop-color:#FFAA00"/>
+    </linearGradient>
+    <linearGradient id="greenGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10B981"/>
+      <stop offset="100%" style="stop-color:#34D399"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-opacity="0.15"/>
+    </filter>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#6B7280"/>
+    </marker>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="900" height="600" fill="#070022"/>
+  
+  <!-- Title -->
+  <text x="450" y="40" text-anchor="middle" fill="white" font-size="24" font-weight="bold">The Loadout Ecosystem</text>
+  <text x="450" y="65" text-anchor="middle" fill="#9CA3AF" font-size="14">Trade games. Fund games.</text>
+  
+  <!-- BACKER Node -->
+  <g filter="url(#shadow)">
+    <circle cx="150" cy="200" r="55" fill="url(#purpleGrad)"/>
+    <text x="150" y="195" text-anchor="middle" fill="white" font-size="14" font-weight="600">BACKER</text>
+    <text x="150" y="212" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-size="11">Trades Tokens</text>
+  </g>
+  
+  <!-- STUDIO Node -->
+  <g filter="url(#shadow)">
+    <circle cx="750" cy="200" r="55" fill="url(#orangeGrad)"/>
+    <text x="750" y="195" text-anchor="middle" fill="white" font-size="14" font-weight="600">STUDIO</text>
+    <text x="750" y="212" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-size="11">Builds Game</text>
+  </g>
+  
+  <!-- TOKEN Node (center) -->
+  <g filter="url(#shadow)">
+    <rect x="375" y="150" width="150" height="100" rx="12" fill="#1F2937"/>
+    <rect x="375" y="150" width="150" height="100" rx="12" fill="none" stroke="url(#purpleGrad)" stroke-width="2"/>
+    <text x="450" y="190" text-anchor="middle" fill="white" font-size="16" font-weight="700">GAME TOKEN</text>
+    <text x="450" y="210" text-anchor="middle" fill="#9CA3AF" font-size="11">Price Discovery</text>
+    <text x="450" y="225" text-anchor="middle" fill="#9CA3AF" font-size="11">via Bonding Curve</text>
+  </g>
+  
+  <!-- TREASURY Node -->
+  <g filter="url(#shadow)">
+    <rect x="375" y="350" width="150" height="80" rx="12" fill="url(#greenGrad)"/>
+    <text x="450" y="385" text-anchor="middle" fill="white" font-size="16" font-weight="700">TREASURY</text>
+    <text x="450" y="405" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-size="11">Dev Funding</text>
+  </g>
+  
+  <!-- PROTOCOL Node -->
+  <g filter="url(#shadow)">
+    <rect x="100" y="450" width="120" height="60" rx="8" fill="#374151"/>
+    <text x="160" y="480" text-anchor="middle" fill="white" font-size="12" font-weight="600">PROTOCOL</text>
+    <text x="160" y="495" text-anchor="middle" fill="#9CA3AF" font-size="10">0.5% Fee</text>
+  </g>
+  
+  <!-- GAME OUTPUT Node -->
+  <g filter="url(#shadow)">
+    <rect x="680" y="450" width="120" height="60" rx="8" fill="#374151"/>
+    <text x="740" y="480" text-anchor="middle" fill="white" font-size="12" font-weight="600">SHIPPED GAME</text>
+    <text x="740" y="495" text-anchor="middle" fill="#9CA3AF" font-size="10">Milestones Hit</text>
+  </g>
+  
+  <!-- Arrows and Flow Labels -->
+  
+  <!-- Backer → Token (Buys) -->
+  <path d="M 210 185 Q 290 160 370 180" fill="none" stroke="#7C3AED" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="280" y="155" text-anchor="middle" fill="#A78BFA" font-size="11">Buys Token</text>
+  
+  <!-- Token → Backer (Sells) -->
+  <path d="M 370 220 Q 290 240 210 215" fill="none" stroke="#EF4444" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="280" y="255" text-anchor="middle" fill="#F87171" font-size="11">Can Sell Anytime</text>
+  
+  <!-- Token → Treasury (Fees) -->
+  <path d="M 450 255 L 450 345" fill="none" stroke="#10B981" stroke-width="3" marker-end="url(#arrowhead)"/>
+  <text x="480" y="305" text-anchor="start" fill="#34D399" font-size="12" font-weight="600">Trading Fees</text>
+  <text x="480" y="320" text-anchor="start" fill="#6EE7B7" font-size="10">(Up to 10%)</text>
+  
+  <!-- Treasury → Protocol (Fee Split) -->
+  <path d="M 375 400 Q 280 440 220 450" fill="none" stroke="#6B7280" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+  <text x="280" y="445" text-anchor="middle" fill="#9CA3AF" font-size="10">Fee Split</text>
+  
+  <!-- Treasury → Studio -->
+  <path d="M 525 390 Q 620 390 690 280" fill="none" stroke="#F59E0B" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="620" y="355" text-anchor="middle" fill="#FBBF24" font-size="11">Funds Development</text>
+  
+  <!-- Studio → Game -->
+  <path d="M 750 260 L 750 445" fill="none" stroke="#9CA3AF" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+  <text x="770" y="360" text-anchor="start" fill="#9CA3AF" font-size="10">Ships</text>
+  
+  <!-- Game → Token Value (Success Loop) -->
+  <path d="M 680 480 Q 550 520 450 435" fill="none" stroke="#34D399" stroke-width="2" stroke-dasharray="5,5" marker-end="url(#arrowhead)"/>
+  <text x="560" y="510" text-anchor="middle" fill="#34D399" font-size="11">Success → Token Value ↑</text>
+  
+  <!-- Token → Studio (Direct) -->
+  <path d="M 530 185 Q 620 170 690 190" fill="none" stroke="#FBBF24" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+  <text x="610" y="160" text-anchor="middle" fill="#FCD34D" font-size="10">Team Allocation</text>
+  <text x="610" y="172" text-anchor="middle" fill="#FCD34D" font-size="10">(if Studio Launch)</text>
+  
+  <!-- Legend -->
+  <rect x="30" y="530" width="200" height="55" rx="8" fill="rgba(255,255,255,0.05)"/>
+  <text x="45" y="550" fill="#9CA3AF" font-size="10">◉ Purple: Backer Flow</text>
+  <text x="45" y="565" fill="#9CA3AF" font-size="10">◉ Orange: Studio Flow</text>
+  <text x="45" y="580" fill="#9CA3AF" font-size="10">◉ Green: Value Accrual</text>
+  
+  <!-- Loadout Logo placeholder -->
+  <text x="850" y="580" text-anchor="end" fill="#6B7280" font-size="12" font-weight="600">LOADOUT</text>
+</svg>
