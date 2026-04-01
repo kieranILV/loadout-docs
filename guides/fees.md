@@ -1,28 +1,28 @@
 # Fee Structure
 
-Loadout uses a 10% trading fee — higher than typical DEXs, but that's the point. This isn't a trading platform with funding attached. It's a **funding platform with trading attached**.
+Loadout uses a 5% trading fee — higher than typical DEXs, but that's the point. This isn't a trading platform with funding attached. It's a **funding platform with trading attached**.
 
 <figure><img src="../diagrams/fee-structure.svg" alt="Fee Structure"><figcaption>How fees are distributed</figcaption></figure>
 
-## The 10% Fee
+## The 5% Fee
 
-Every buy and sell on Loadout incurs a 10% fee. This fee is split:
+Every swap on Loadout incurs a 5% fee. This fee is split:
 
 | Recipient | Share | Purpose |
 |-----------|-------|---------|
-| **Project Treasury** | 9.5% | Funds game development |
-| **Loadout Protocol** | 0.5% | Platform operations |
+| **Project Treasury** | 4.75% | Funds game development |
+| **Loadout Protocol** | 0.25% | Platform operations |
 
 ### Example Trade
 
 If you buy 100 SOL worth of a game token:
-- **9.5 SOL** → Goes directly to the game's development treasury
-- **0.5 SOL** → Goes to Loadout protocol
-- **90 SOL** → Executes your trade on the bonding curve
+- **4.75 SOL** → Goes directly to the game's development treasury
+- **0.25 SOL** → Goes to Loadout protocol
+- **95 SOL** → Executes your swap
 
-## Why So High?
+## Why 5%?
 
-Traditional exchanges charge 0.1-0.3%. DEXs charge 0.3-1%. Why does Loadout charge 10%?
+Traditional exchanges charge 0.1-0.3%. DEXs charge 0.3-1%. Why does Loadout charge 5%?
 
 **Because the fee IS the product.**
 
@@ -30,11 +30,11 @@ On Loadout, you're not just trading — you're funding. Every trade contributes 
 
 ### The Math
 
-| Daily Volume | Treasury Fees (9.5%) | Monthly Treasury |
-|--------------|---------------------|------------------|
-| $10,000 | $950/day | $28,500 |
-| $50,000 | $4,750/day | $142,500 |
-| $100,000 | $9,500/day | $285,000 |
+| Daily Volume | Treasury Fees (4.75%) | Monthly Treasury |
+|--------------|----------------------|------------------|
+| $10,000 | $475/day | $14,250 |
+| $50,000 | $2,375/day | $71,250 |
+| $100,000 | $4,750/day | $142,500 |
 
 For a hyped game doing decent volume, the treasury can accumulate serious funding purely from trading activity.
 
@@ -45,13 +45,18 @@ For a hyped game doing decent volume, the treasury can accumulate serious fundin
 | Pump.fun | 1% | Platform only |
 | Uniswap | 0.3% | LPs |
 | Binance | 0.1% | Platform |
-| **Loadout** | **10%** | **95% to game dev** |
+| **Loadout** | **5%** | **95% to game dev** |
 
-## After Graduation
+## How Fees Are Enforced
 
-Once a project graduates and moves to a Meteora DLMM pool, trading continues on external AMMs. Loadout enforces fee policy at the token level using Token-2022 Transfer Hooks.
+Loadout uses **Meteora DLMM pools** to enforce the 5% fee. When a project launches:
 
-Post-graduation fee sharing continues to fund the project treasury, providing ongoing development capital beyond the initial bonding curve phase.
+1. Token trades on bonding curve (pre-graduation)
+2. At graduation, liquidity moves to a Meteora DLMM pool
+3. The pool is configured with 5% base fee
+4. Fees automatically split between treasury and protocol
+
+This approach ensures consistent fee collection without requiring Token-2022 transfer hooks, keeping tokens compatible with the broader Solana ecosystem.
 
 ---
 
